@@ -33,7 +33,7 @@
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
@@ -102,7 +102,7 @@
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                    <a href="" class="btn btn-success rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
                 </div>
             </nav>
 
@@ -124,7 +124,7 @@
                                     <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                     </p>
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                     <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                     </p>
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@
                                     <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                     </p>
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
             <div class="container">
                 <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: rgba(19, 53, 123, 0.8);">
                     <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-                    <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
+                    <button type="button" class="btn btn-success rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
                 </div>
             </div>
         </div>
@@ -191,30 +191,30 @@
                     </div>
                     <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
                         <h5 class="section-about-title pe-3">About Us</h5>
-                        <h1 class="mb-4">Welcome to <span class="text-primary">Travela</span></h1>
+                        <h1 class="mb-4">Welcome to <span class="text-success">Travela</span></h1>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum, doloribus sunt dicta, officia voluptatibus libero necessitatibus natus impedit quam ullam assumenda? Id atque iste consectetur. Commodi odit ab saepe!</p>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos voluptatem suscipit neque enim, doloribus ipsum rem eos distinctio, dignissimos nisi saepe nulla? Libero numquam perferendis provident placeat molestiae quia?</p>
                         <div class="row gy-2 gx-4 mb-4">
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>First Class Flights</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Handpicked Hotels</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>5 Star Accommodations</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Latest Model Vehicles</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>150 Premium City Tours</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>24/7 Service</p>
                             </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+                        <a class="btn btn-success rounded-pill py-3 px-5 mt-2" href="">Read More</a>
                     </div>
                 </div>
             </div>
@@ -232,50 +232,50 @@
                     <div class="col-lg-6">
                         <div class="row g-4">
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-success rounded p-4 pe-0">
                                     <div class="service-content text-end">
                                         <h5 class="mb-4">WorldWide Tours</h5>
                                         <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-globe fa-4x text-primary"></i>
+                                        <i class="fa fa-globe fa-4x text-success"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
+                                <div class="service-content-inner d-flex align-items-center  bg-white border border-success rounded p-4 pe-0">
                                     <div class="service-content text-end">
                                         <h5 class="mb-4">Hotel Reservation</h5>
                                         <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-hotel fa-4x text-primary"></i>
+                                        <i class="fa fa-hotel fa-4x text-success"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-success rounded p-4 pe-0">
                                     <div class="service-content text-end">
                                         <h5 class="mb-4">Travel Guides</h5>
                                         <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-user fa-4x text-primary"></i>
+                                        <i class="fa fa-user fa-4x text-success"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-success rounded p-4 pe-0">
                                     <div class="service-content text-end">
                                         <h5 class="mb-4">Event Management</h5>
                                         <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-cog fa-4x text-primary"></i>
+                                        <i class="fa fa-cog fa-4x text-success"></i>
                                     </div>
                                 </div>
                             </div>
@@ -284,9 +284,9 @@
                     <div class="col-lg-6">
                         <div class="row g-4">
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-success rounded p-4 ps-0">
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-globe fa-4x text-primary"></i>
+                                        <i class="fa fa-globe fa-4x text-success"></i>
                                     </div>
                                     <div class="service-content">
                                         <h5 class="mb-4">WorldWide Tours</h5>
@@ -296,9 +296,9 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-success rounded p-4 ps-0">
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-hotel fa-4x text-primary"></i>
+                                        <i class="fa fa-hotel fa-4x text-success"></i>
                                     </div>
                                     <div class="service-content">
                                         <h5 class="mb-4">Hotel Reservation</h5>
@@ -308,9 +308,9 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-success rounded p-4 ps-0">
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-user fa-4x text-primary"></i>
+                                        <i class="fa fa-user fa-4x text-success"></i>
                                     </div>
                                     <div class="service-content">
                                         <h5 class="mb-4">Travel Guides</h5>
@@ -320,9 +320,9 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-success rounded p-4 ps-0">
                                     <div class="service-icon p-4">
-                                        <i class="fa fa-cog fa-4x text-primary"></i>
+                                        <i class="fa fa-cog fa-4x text-success"></i>
                                     </div>
                                     <div class="service-content">
                                         <h5 class="mb-4">Event Management</h5>
@@ -335,7 +335,7 @@
                     </div>
                     <div class="col-12">
                         <div class="text-center">
-                            <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Service More</a>
+                            <a class="btn btn-success rounded-pill py-3 px-5 mt-2" href="">Service More</a>
                         </div>
                     </div>
                 </div>
@@ -353,32 +353,32 @@
                 <div class="tab-class text-center">
                     <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                         <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
+                            <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
                                 <span class="text-dark" style="width: 150px;">All</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
+                            <a class="d-flex py-2 mx-3 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
                                 <span class="text-dark" style="width: 150px;">USA</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
+                            <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
                                 <span class="text-dark" style="width: 150px;">Canada</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
+                            <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
                                 <span class="text-dark" style="width: 150px;">Europe</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
+                            <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
                                 <span class="text-dark" style="width: 150px;">China</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-6">
+                            <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#tab-6">
                                 <span class="text-dark" style="width: 150px;">Singapore</span>
                             </a>
                         </li>
@@ -392,12 +392,12 @@
                                             <div class="destination-img">
                                                 <img class="img-fluid rounded w-100" src="img/destination-1.jpg" alt="">
                                                 <div class="destination-overlay p-4">
-                                                    <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                                    <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                                     <h4 class="text-white mb-2 mt-3">New York City</h4>
                                                     <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
                                                 <div class="search-icon">
-                                                    <a href="img/destination-1.jpg" data-lightbox="destination-1"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                                    <a href="img/destination-1.jpg" data-lightbox="destination-1"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -405,12 +405,12 @@
                                             <div class="destination-img">
                                                 <img class="img-fluid rounded w-100" src="img/destination-2.jpg" alt="">
                                                 <div class="destination-overlay p-4">
-                                                    <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                                    <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                                     <h4 class="text-white mb-2 mt-3">Las vegas</h4>
                                                     <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
                                                 <div class="search-icon">
-                                                    <a href="img/destination-2.jpg" data-lightbox="destination-2"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                                    <a href="img/destination-2.jpg" data-lightbox="destination-2"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -418,12 +418,12 @@
                                             <div class="destination-img">
                                                 <img class="img-fluid rounded w-100" src="img/destination-7.jpg" alt="">
                                                 <div class="destination-overlay p-4">
-                                                    <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                                    <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                                     <h4 class="text-white mb-2 mt-3">Los angelas</h4>
                                                     <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
                                                 <div class="search-icon">
-                                                    <a href="img/destination-7.jpg" data-lightbox="destination-7"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                                    <a href="img/destination-7.jpg" data-lightbox="destination-7"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -431,12 +431,12 @@
                                             <div class="destination-img">
                                                 <img class="img-fluid rounded w-100" src="img/destination-8.jpg" alt="">
                                                 <div class="destination-overlay p-4">
-                                                    <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                                    <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                                     <h4 class="text-white mb-2 mt-3">Los angelas</h4>
                                                     <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
                                                 <div class="search-icon">
-                                                    <a href="img/destination-8.jpg" data-lightbox="destination-8"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                                    <a href="img/destination-8.jpg" data-lightbox="destination-8"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -446,12 +446,12 @@
                                     <div class="destination-img h-100">
                                         <img class="img-fluid rounded w-100 h-100" src="img/destination-9.jpg" style="object-fit: cover; min-height: 300px;" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-9.jpg" data-lightbox="destination-4"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-9.jpg" data-lightbox="destination-4"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -459,12 +459,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-4.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">Los angelas</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-4.jpg" data-lightbox="destination-4"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-4.jpg" data-lightbox="destination-4"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -472,12 +472,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-5.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">Los angelas</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -485,12 +485,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-6.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">Los angelas</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -502,12 +502,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-5.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -515,12 +515,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-6.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -532,12 +532,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-5.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -545,12 +545,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-6.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -562,12 +562,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-5.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -575,12 +575,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-6.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -592,12 +592,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-5.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -605,12 +605,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-6.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -622,12 +622,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-5.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -635,12 +635,12 @@
                                     <div class="destination-img">
                                         <img class="img-fluid rounded w-100" src="img/destination-6.jpg" alt="">
                                         <div class="destination-overlay p-4">
-                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <a href="#" class="btn btn-success text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 class="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                         </div>
                                         <div class="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-success"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -664,12 +664,12 @@
                 <div class="tab-class text-center">
                     <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                         <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#NationalTab-1">
+                            <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill active" data-bs-toggle="pill" href="#NationalTab-1">
                                 <span class="text-dark" style="width: 250px;">National Tour Category</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#InternationalTab-2">
+                            <a class="d-flex py-2 mx-3 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#InternationalTab-2">
                                 <span class="text-dark" style="width: 250px;">International tour Category</span>
                             </a>
                         </li>
@@ -866,11 +866,11 @@
                                 <h5 class="mb-0">Venice - Italy</h5>
                                 <small class="text-uppercase">Hotel Deals</small>
                                 <div class="mb-3">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
                                 </div>
                                 <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
@@ -932,11 +932,11 @@
                                 <h5 class="mb-0">Discover Japan</h5>
                                 <small class="text-uppercase">Hotel Deals</small>
                                 <div class="mb-3">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
                                 </div>
                                 <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
@@ -967,11 +967,11 @@
                                 <h5 class="mb-0">Thayland Trip</h5>
                                 <small class="text-uppercase">Hotel Deals</small>
                                 <div class="mb-3">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
                                 </div>
                                 <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
@@ -1001,27 +1001,27 @@
             <div class="tab-class text-center">
                 <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                     <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#GalleryTab-1">
+                        <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill active" data-bs-toggle="pill" href="#GalleryTab-1">
                             <span class="text-dark" style="width: 150px;">All</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-2">
+                        <a class="d-flex py-2 mx-3 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-2">
                             <span class="text-dark" style="width: 150px;">World tour</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-3">
+                        <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-3">
                             <span class="text-dark" style="width: 150px;">Ocean Tour</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-4">
+                        <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-4">
                             <span class="text-dark" style="width: 150px;">Summer Tour</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-5">
+                        <a class="d-flex mx-3 py-2 border border-success bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-5">
                             <span class="text-dark" style="width: 150px;">Sport Tour</span>
                         </a>
                     </li>
@@ -1315,7 +1315,7 @@
                         </p>
                         <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat doloribus quasi quo iure officia.
                         </p>
-                        <a href="#" class="btn btn-light text-primary rounded-pill py-3 px-5 mt-2">Read More</a>
+                        <a href="#" class="btn btn-light text-success rounded-pill py-3 px-5 mt-2">Read More</a>
                     </div>
                     <div class="col-lg-6">
                         <h1 class="text-white mb-3">Book A Tour Deals</h1>
@@ -1378,7 +1378,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary text-white w-100 py-3" type="submit">Book Now</button>
+                                    <button class="btn btn-success text-white w-100 py-3" type="submit">Book Now</button>
                                 </div>
                             </div>
                         </form>
@@ -1403,10 +1403,10 @@
                                     <img src="img/guide-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
                                 </div>
                                 <div class="guide-icon rounded-pill p-2">
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                             <div class="guide-title text-center rounded-bottom p-4">
@@ -1424,10 +1424,10 @@
                                     <img src="img/guide-2.jpg" class="img-fluid w-100 rounded-top" alt="Image">
                                 </div>
                                 <div class="guide-icon rounded-pill p-2">
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                             <div class="guide-title text-center rounded-bottom p-4">
@@ -1445,10 +1445,10 @@
                                     <img src="img/guide-3.jpg" class="img-fluid w-100 rounded-top" alt="Image">
                                 </div>
                                 <div class="guide-icon rounded-pill p-2">
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                             <div class="guide-title text-center rounded-bottom p-4">
@@ -1466,10 +1466,10 @@
                                     <img src="img/guide-4.jpg" class="img-fluid w-100 rounded-top" alt="Image">
                                 </div>
                                 <div class="guide-icon rounded-pill p-2">
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-success rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                             <div class="guide-title text-center rounded-bottom p-4">
@@ -1505,16 +1505,16 @@
                                     </div>
                                 </div>
                                 <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>28 Jan 2050</small>
+                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-success me-2"></i>1.7K</a>
+                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-success me-2"></i>1K</a>
                                 </div>
                             </div>
                             <div class="blog-content border border-top-0 rounded-bottom p-4">
                                 <p class="mb-3">Posted By: Royal Hamblin </p>
                                 <a href="#" class="h4">Adventures Trip</a>
                                 <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <a href="#" class="btn btn-success rounded-pill py-2 px-4">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -1528,16 +1528,16 @@
                                     </div>
                                 </div>
                                 <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>28 Jan 2050</small>
+                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-success me-2"></i>1.7K</a>
+                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-success me-2"></i>1K</a>
                                 </div>
                             </div>
                             <div class="blog-content border border-top-0 rounded-bottom p-4">
                                 <p class="mb-3">Posted By: Royal Hamblin </p>
                                 <a href="#" class="h4">Adventures Trip</a>
                                 <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <a href="#" class="btn btn-success rounded-pill py-2 px-4">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -1551,16 +1551,16 @@
                                     </div>
                                 </div>
                                 <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>28 Jan 2050</small>
+                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-success me-2"></i>1.7K</a>
+                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-success me-2"></i>1K</a>
                                 </div>
                             </div>
                             <div class="blog-content border border-top-0 rounded-bottom p-4">
                                 <p class="mb-3">Posted By: Royal Hamblin </p>
                                 <a href="#" class="h4">Adventures Trip</a>
                                 <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <a href="#" class="btn btn-success rounded-pill py-2 px-4">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -1589,11 +1589,11 @@
                             <h5 class="mb-0">John Abraham</h5>
                             <p class="mb-0">New York, USA</p>
                             <div class="d-flex justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
                             </div>
                         </div>
                     </div>
@@ -1609,11 +1609,11 @@
                             <h5 class="mb-0">John Abraham</h5>
                             <p class="mb-0">New York, USA</p>
                             <div class="d-flex justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
                             </div>
                         </div>
                     </div>
@@ -1629,11 +1629,11 @@
                             <h5 class="mb-0">John Abraham</h5>
                             <p class="mb-0">New York, USA</p>
                             <div class="d-flex justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
                             </div>
                         </div>
                     </div>
@@ -1649,11 +1649,11 @@
                             <h5 class="mb-0">John Abraham</h5>
                             <p class="mb-0">New York, USA</p>
                             <div class="d-flex justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
+                                <i class="fas fa-star text-success"></i>
                             </div>
                         </div>
                     </div>
@@ -1671,8 +1671,8 @@
                     <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
                     </p>
                     <div class="position-relative mx-auto">
-                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                        <input class="form-control border-success rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-success rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -1692,10 +1692,10 @@
                             <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn-square btn btn-success rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-success rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn-square btn btn-success rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-success rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1787,7 +1787,7 @@
         <!-- Copyright End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn btn-success btn-success-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
         
         <!-- JavaScript Libraries -->
