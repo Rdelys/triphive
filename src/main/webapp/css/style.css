@@ -67,20 +67,20 @@
 }
 
 .btn.btn-primary {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    box-shadow: inset 0 0 0 0 var(--bs-success);
 }
 
 .btn.btn-primary:hover {
     box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
-    color: var(--bs-primary) !important;
+    color: var(--bs-success) !important;
 }
 
 .btn.btn-light {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    box-shadow: inset 0 0 0 0 var(--bs-success);
 }
 
 .btn.btn-light:hover {
-    box-shadow: inset 300px 0 0 0 var(--bs-primary);
+    box-shadow: inset 300px 0 0 0 var(--bs-success);
     color: var(--bs-light) !important;
 }
 
@@ -97,7 +97,7 @@
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    color: var(--bs-primary);
+    color: var(--bs-success);
 }
 
 .section-title::before {
@@ -108,7 +108,7 @@
     right: 0;
     transform: translateY(-50%);
     margin-right: -50px;
-    border: 1px solid var(--bs-primary) !important;
+    border: 1px solid var(--bs-success) !important;
 }
 
 .section-title::after {
@@ -119,7 +119,7 @@
     left: 0;
     transform: translateY(-50%);
     margin-left: -50px;
-    border: 1px solid var(--bs-primary) !important;
+    border: 1px solid var(--bs-success) !important;
 }
 
 
@@ -130,7 +130,7 @@
 
 .topbar {
     padding: 2px 10px 2px 20px;
-    background: var(--bs-primary) !important;
+    background: var(--bs-success) !important;
 }
 
 .topbar a,
@@ -179,7 +179,7 @@
 }
 
 .sticky-top.navbar-light .navbar-brand h1 {
-    color: var(--bs-primary);
+    color: var(--bs-success);
 }
 
 .navbar-light .navbar-brand img {
@@ -215,7 +215,7 @@
 }
 
 .dropdown .dropdown-menu a:hover {
-    background: var(--bs-primary);
+    background: var(--bs-success);
     color: var(--bs-white);
 }
 
@@ -234,13 +234,13 @@
     }
 
     .navbar-light .navbar-brand h1 {
-        color: var(--bs-primary);
+        color: var(---bs-success);
     }
 
     .navbar.navbar-expand-lg .navbar-toggler {
         padding: 10px 20px;
-        border: 1px solid var(--bs-primary);
-        color: var(--bs-primary);
+        border: 1px solid var(--bs-success);
+        color: var(--bs-success);
     }
 
     .navbar-light .navbar-collapse {
@@ -256,7 +256,7 @@
 
     .navbar-light .navbar-nav .nav-link:hover,
     .navbar-light .navbar-nav .nav-link.active  {
-        color: var(--bs-primary) !important;
+        color: var(--bs-success) !important;
     }
 
     .navbar-light .navbar-brand img {
@@ -286,7 +286,7 @@
         height: 0;
         bottom: -1px;
         left: 0;
-        background: var(--bs-primary);
+        background: var(--bs-success);
         transition: .5s;
         z-index: -1;
     }
@@ -413,7 +413,7 @@
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    color: var(--bs-primary);
+    color: var(--bs-success);
 }
 
 .about .container .section-about-title::before {
@@ -424,7 +424,7 @@
     right: 0;
     transform: translateY(-50%);
     margin-right: -50px;
-    border: 1px solid var(--bs-primary) !important;
+    border: 1px solid var(--bs-success) !important;
 }
 /*** About End ***/
 
@@ -435,7 +435,7 @@
 }
 .service .service-content-inner:hover {
     position: relative;
-    background: var(--bs-primary) !important;
+    background: var(--bs-success) !important;
 }
 
 .service .service-content-inner .service-content h5,
@@ -492,7 +492,7 @@
     padding: 0 0 20px 0;
 }
 .destination .tab-class .nav-item a.active {
-    background: var(--bs-primary) !important;
+    background: var(--bs-success) !important;
 }
 
 .destination .tab-class .nav-item a.active span {
@@ -590,7 +590,7 @@
     left: 50%; 
     transform: translateX(-50%);
     display: inline-block;
-    background: var(--bs-primary);
+    background: var(--bs-success);
     color: var(--bs-white);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px; 
@@ -606,7 +606,7 @@
     top: -50px;
     left: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--bs-success);
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -616,21 +616,21 @@
     top: -50px;
     right: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--bs-success);
     border-radius: 30px;
     transition: 0.5s;
 }
 
 .packages .packages-carousel .owl-nav .owl-prev i,
 .packages .packages-carousel .owl-nav .owl-next i {
-    color: var(--bs-primary);
+    color: var(--bs-success);
     font-size: 17px;
     transition: 0.5s;
 }
 
 .packages .packages-carousel .owl-nav .owl-prev:hover,
 .packages .packages-carousel .owl-nav .owl-next:hover {
-    background: var(--bs-primary);
+    background: var(--bs-success);
 }
 
 .packages .packages-carousel .owl-nav .owl-prev:hover i,
@@ -645,7 +645,7 @@
     padding: 0 0 20px 0;
 }
 .ExploreTour .tab-class .nav-item a.active {
-    background: var(--bs-primary) !important;
+    background: var(--bs-success) !important;
 }
 
 .ExploreTour .tab-class .nav-item a.active span {
@@ -709,7 +709,7 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 80px;
-    background: var(--bs-primary);
+    background: var(--bs-success);
     color: var(--bs-white);
 }
 
@@ -737,7 +737,7 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 80px;
-    background: var(--bs-primary);
+    background: var(--bs-success);
     color: var(--bs-white);
 }
 
@@ -797,14 +797,14 @@
     width: 15px;
     height: 15px;
     background: var(--bs-light);
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--bs-success);
     border-radius: 10px;
     transition: 0.5s;
 }
 
 .ExploreTour #InternationalTab-2 .InternationalTour-carousel .owl-dot.active {
     width: 40px;
-    background: var(--bs-primary);
+    background: var(--bs-success);
 }
 /*** Explore Tour End ***/
 
@@ -874,7 +874,7 @@
     padding: 0 0 20px 0;
 }
 .gallery .tab-class .nav-item a.active {
-    background: var(--bs-primary) !important;
+    background: var(--bs-success) !important;
 }
 
 .gallery .tab-class .nav-item a.active span {
@@ -913,12 +913,12 @@
 }
 
 .booking .container form .btn.btn-primary {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    box-shadow: inset 0 0 0 0 var(--bs-success);
 }
 
 .booking .container form .btn.btn-primary:hover {
     box-shadow: inset 800px 0 0 0 var(--bs-light) !important;
-    color: var(--bs-primary) !important;
+    color: var(--bs-success) !important;
 }
 
 
@@ -938,7 +938,7 @@
     margin-bottom: -50px;
     display: flex;
     justify-content: center;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--bs-success);
     background: var(--bs-light);
     z-index: 9;
 }
@@ -994,7 +994,7 @@
 
 .guide .guide-item:hover .guide-title::after {
     height: 100%;
-    background: var(--bs-primary) !important;
+    background: var(--bs-success) !important;
     color: var(--bs-white);
 }
 
@@ -1093,7 +1093,7 @@
     height: 100px; 
     top: 0; left: 50%; 
     transform: translate(-50%, -50%);
-    border: 3px solid var(--bs-primary); 
+    border: 3px solid var(--bs-success); 
     border-style: dotted;
     border-radius: 50%;
 }
@@ -1112,14 +1112,14 @@
     width: 15px;
     height: 15px;
     background: var(--bs-light);
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--bs-success);
     border-radius: 10px;
     transition: 0.5s;
 }
 
 .testimonial .testimonial-carousel .owl-dot.active {
     width: 40px;
-    background: var(--bs-primary);
+    background: var(--bs-success);
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev {
@@ -1127,7 +1127,7 @@
     top: -55px;
     left: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--bs-success);
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -1137,21 +1137,21 @@
     top: -55px;
     right: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--bs-success);
     border-radius: 30px;
     transition: 0.5s;
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev i,
 .testimonial .testimonial-carousel .owl-nav .owl-next i {
-    color: var(--bs-primary);
+    color: var(--bs-success);
     font-size: 17px;
     transition: 0.5s;
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial .testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--bs-primary);
+    background: var(--bs-success);
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev:hover i,
@@ -1160,7 +1160,7 @@
 }
 
 .testimonial .testimonial-carousel .owl-item.center .testimonial-item .testimonial-comment {
-    background: var(--bs-primary) !important;
+    background: var(--bs-success) !important;
     color: var(--bs-white);
     transition: 0.5s;
 }
@@ -1174,12 +1174,12 @@
 
 /*** Contact Start ***/
 .contact .container form .btn.btn-primary {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    box-shadow: inset 0 0 0 0 var(--bs-success);
 }
 
 .contact .container form .btn.btn-primary:hover {
     box-shadow: inset 1000px 0 0 0 var(--bs-light) !important;
-    color: var(--bs-primary) !important;
+    color: var(--bs-success) !important;
 }
 /*** Contact End ***/
 
@@ -1234,7 +1234,7 @@
 
 .footer .footer-item a:hover {
     letter-spacing: 2px;
-    color: var(--bs-primary);
+    color: var(--bs-success);
 }
 
 /*** Footer End ***/
