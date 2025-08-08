@@ -1,202 +1,162 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Tourisme</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
+<meta charset="UTF-8">
+<title>Dashboard TRIPHIVE</title>
+<style>
     body {
-      background-color: #f7f9fb;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
     }
 
+    /* Navbar gauche */
     .sidebar {
-      width: 250px;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #198754;
-      color: white;
-      padding-top: 2rem;
+        height: 100vh;
+        width: 240px;
+        background-color: #2c3e50;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .sidebar button {
+        background: none;
+        border: none;
+        padding: 15px;
+        text-align: left;
+        color: #ecf0f1;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .sidebar button:hover {
+        background-color: #34495e;
     }
 
-    .sidebar h2 {
-      font-size: 1.5rem;
-      padding-left: 1rem;
+    /* Contenu principal */
+    .content {
+        margin-left: 240px;
+        padding: 20px;
+        flex: 1;
     }
 
-    .sidebar .nav-link {
-      color: white;
-      padding: 1rem 1.5rem;
-      font-weight: bold;
+    .section {
+        display: none;
+        animation: fadeIn 0.5s ease;
     }
 
-    .sidebar .nav-link:hover {
-      background-color: #157347;
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
-    .main-content {
-      margin-left: 250px;
-      padding: 2rem;
+    h2 {
+        margin-top: 0;
     }
 
-    .section-title {
-      border-bottom: 2px solid #198754;
-      margin-bottom: 1rem;
-      padding-bottom: .5rem;
+    form {
+        background: #ecf0f1;
+        padding: 15px;
+        border-radius: 8px;
     }
 
-    .card {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    input, textarea, select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #bdc3c7;
     }
-  </style>
+
+    button.submit {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button.submit:hover {
+        background-color: #2ecc71;
+    }
+</style>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2 class="mb-4 text-center">📊 Admin</h2>
-    <nav class="nav flex-column">
-      <a class="nav-link" href="#clients">👤 Clients</a>
-      <a class="nav-link" href="#reservations">📆 Réservations</a>
-      <a class="nav-link" href="#destinations">🗺️ Destinations</a>
-      <a class="nav-link" href="#offres">💼 Offres</a>
-      <a class="nav-link" href="#guides">🧑‍🏫 Guides</a>
-      <a class="nav-link" href="#services">🔧 Services</a>
-      <a class="nav-link" href="#messages">📩 Messages</a>
-    </nav>
-  </div>
+<!-- Navbar -->
+<div class="sidebar">
+    <button onclick="showSection('utilisateur')">Utilisateur</button>
+    <button onclick="showSection('profil')">Profil</button>
+    <button onclick="showSection('produit')">Produit</button>
+    <button onclick="showSection('commande')">Commande</button>
+    <button onclick="showSection('reservation')">Réservation</button>
+    <button onclick="showSection('message')">Message</button>
+</div>
 
-  <!-- Main Content -->
-  <div class="main-content">
+<!-- Contenu -->
+<div class="content">
+    <div id="utilisateur" class="section">
+        <h2>Gestion des Utilisateurs</h2>
+        <form>
+            <input type="text" placeholder="Nom">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Mot de passe">
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
 
-    <!-- Clients -->
-    <section id="clients" class="mb-5">
-      <h2 class="section-title text-success">👤 Clients</h2>
-      <div class="card p-3">
-        <table class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID</th><th>Nom</th><th>Prénom</th><th>Email</th><th>Adresse</th><th>Téléphone</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Rakoto</td><td>Jean</td><td>jean@email.com</td><td>Antananarivo</td><td>0321234567</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div id="profil" class="section">
+        <h2>Gestion des Profils</h2>
+        <form>
+            <input type="text" placeholder="Pseudo">
+            <textarea placeholder="Description"></textarea>
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
 
-    <!-- Réservations -->
-    <section id="reservations" class="mb-5">
-      <h2 class="section-title text-success">📆 Réservations</h2>
-      <div class="card p-3">
-        <table class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID</th><th>Date</th><th>Client</th><th>Destination</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>2025-08-10</td><td>Jean Rakoto</td><td>Nosy Be</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div id="produit" class="section">
+        <h2>Gestion des Produits</h2>
+        <form>
+            <input type="text" placeholder="Nom du produit">
+            <input type="number" placeholder="Prix">
+            <textarea placeholder="Description"></textarea>
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
 
-    <!-- Destinations -->
-    <section id="destinations" class="mb-5">
-      <h2 class="section-title text-success">🗺️ Destinations</h2>
-      <div class="card p-3">
-        <table class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID</th><th>Nom</th><th>Pays</th><th>Description</th><th>Photo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Nosy Be</td><td>Madagascar</td><td>Île paradisiaque</td><td><img src="img/nosybe.jpg" width="80"/></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div id="commande" class="section">
+        <h2>Gestion des Commandes</h2>
+        <form>
+            <input type="text" placeholder="ID Utilisateur">
+            <input type="text" placeholder="Produit">
+            <input type="number" placeholder="Quantité">
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
 
-    <!-- Offres -->
-    <section id="offres" class="mb-5">
-      <h2 class="section-title text-success">💼 Offres</h2>
-      <div class="card p-3">
-        <table class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID</th><th>Titre</th><th>Description</th><th>Prix</th><th>Destination</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Pack Luxe</td><td>Tout inclus 7 jours</td><td>850€</td><td>Nosy Be</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div id="reservation" class="section">
+        <h2>Liste des Réservations</h2>
+        <p>Affichage des réservations ici...</p>
+    </div>
 
-    <!-- Guides -->
-    <section id="guides" class="mb-5">
-      <h2 class="section-title text-success">🧑‍🏫 Guides</h2>
-      <div class="card p-3">
-        <table class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID</th><th>Nom</th><th>Spécialité</th><th>Téléphone</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Randria</td><td>Faune et flore</td><td>0345678901</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div id="message" class="section">
+        <h2>Messagerie</h2>
+        <p>Affichage des messages ici...</p>
+    </div>
+</div>
 
-    <!-- Services -->
-    <section id="services" class="mb-5">
-      <h2 class="section-title text-success">🔧 Services</h2>
-      <div class="card p-3">
-        <table class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID</th><th>Nom</th><th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Transport</td><td>Navettes aéroport & hôtels</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+    }
 
-    <!-- Messages -->
-    <section id="messages" class="mb-5">
-      <h2 class="section-title text-success">📩 Messages</h2>
-      <div class="card p-3">
-        <table class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID</th><th>Nom</th><th>Email</th><th>Sujet</th><th>Contenu</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Fanja</td><td>fanja@email.com</td><td>Demande d'offre</td><td>Bonjour, je suis intéressée par...</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center text-muted p-3 mt-5">
-      &copy; 2025 - Admin Tourisme Dashboard
-    </footer>
-
-  </div>
+    // Affiche la première section par défaut
+    showSection('utilisateur');
+</script>
 
 </body>
 </html>
