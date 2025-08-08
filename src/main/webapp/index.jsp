@@ -185,7 +185,7 @@
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5">
-                        <div class="h-100" style="border: 50px solid; border-color: transparent #13357B transparent #13357B;">
+                        <div class="h-100" style="border: 50px solid; border-color: transparent #137b53 transparent #137b1d;">
                             <img src="img/about-img.jpg" class="img-fluid w-100 h-100" alt="">
                         </div>
                     </div>
@@ -948,6 +948,8 @@
                                     <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                     <div class="packages-item">

@@ -40,7 +40,7 @@
         <!-- Spinner End -->
 
         <!-- Topbar Start -->
-        <div class="container-fluid bg-primary px-5 d-none d-lg-block">
+        <div class="container-fluid bg-success px-5 d-none d-lg-block">
             <div class="row gx-0">
                 <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
@@ -159,11 +159,11 @@
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                        <span class="carousel-control-prev-icon btn bg-success" aria-hidden="false"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                        <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                        <span class="carousel-control-next-icon btn bg-success" aria-hidden="false"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
@@ -874,7 +874,7 @@
                                 </div>
                                 <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
-                            <div class="row bg-primary rounded-bottom mx-0">
+                            <div class="row bg-success rounded-bottom mx-0">
                                 <div class="col-6 text-start px-0">
                                     <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
                                 </div>
@@ -899,15 +899,15 @@
                                 <h5 class="mb-0">The New California</h5>
                                 <small class="text-uppercase">Hotel Deals</small>
                                 <div class="mb-3">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
                                 </div>
                                 <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
-                            <div class="row bg-primary rounded-bottom mx-0">
+                            <div class="row bg-success rounded-bottom mx-0">
                                 <div class="col-6 text-start px-0">
                                     <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
                                 </div>
@@ -940,7 +940,7 @@
                                 </div>
                                 <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
-                            <div class="row bg-primary rounded-bottom mx-0">
+                            <div class="row bg-success rounded-bottom mx-0">
                                 <div class="col-6 text-start px-0">
                                     <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
                                 </div>
@@ -973,7 +973,7 @@
                                 </div>
                                 <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
-                            <div class="row bg-primary rounded-bottom mx-0">
+                            <div class="row bg-success rounded-bottom mx-0">
                                 <div class="col-6 text-start px-0">
                                     <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
                                 </div>
