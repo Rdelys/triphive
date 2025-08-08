@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Tourisme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f7f9fb;
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #198754;
+      color: white;
+      padding-top: 2rem;
+    }
+
+    .sidebar h2 {
+      font-size: 1.5rem;
+      padding-left: 1rem;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      padding: 1rem 1.5rem;
+      font-weight: bold;
+    }
+
+    .sidebar .nav-link:hover {
+      background-color: #157347;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+
+    .section-title {
+      border-bottom: 2px solid #198754;
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+    }
+
+    .card {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 class="mb-4 text-center">📊 Admin</h2>
+    <nav class="nav flex-column">
+      <a class="nav-link" href="#clients">👤 Clients</a>
+      <a class="nav-link" href="#reservations">📆 Réservations</a>
+      <a class="nav-link" href="#destinations">🗺️ Destinations</a>
+      <a class="nav-link" href="#offres">💼 Offres</a>
+      <a class="nav-link" href="#guides">🧑‍🏫 Guides</a>
+      <a class="nav-link" href="#services">🔧 Services</a>
+      <a class="nav-link" href="#messages">📩 Messages</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Clients -->
+    <section id="clients" class="mb-5">
+      <h2 class="section-title text-success">👤 Clients</h2>
+      <div class="card p-3">
+        <table class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID</th><th>Nom</th><th>Prénom</th><th>Email</th><th>Adresse</th><th>Téléphone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Rakoto</td><td>Jean</td><td>jean@email.com</td><td>Antananarivo</td><td>0321234567</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Réservations -->
+    <section id="reservations" class="mb-5">
+      <h2 class="section-title text-success">📆 Réservations</h2>
+      <div class="card p-3">
+        <table class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID</th><th>Date</th><th>Client</th><th>Destination</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>2025-08-10</td><td>Jean Rakoto</td><td>Nosy Be</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Destinations -->
+    <section id="destinations" class="mb-5">
+      <h2 class="section-title text-success">🗺️ Destinations</h2>
+      <div class="card p-3">
+        <table class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID</th><th>Nom</th><th>Pays</th><th>Description</th><th>Photo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Nosy Be</td><td>Madagascar</td><td>Île paradisiaque</td><td><img src="img/nosybe.jpg" width="80"/></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Offres -->
+    <section id="offres" class="mb-5">
+      <h2 class="section-title text-success">💼 Offres</h2>
+      <div class="card p-3">
+        <table class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID</th><th>Titre</th><th>Description</th><th>Prix</th><th>Destination</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Pack Luxe</td><td>Tout inclus 7 jours</td><td>850€</td><td>Nosy Be</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Guides -->
+    <section id="guides" class="mb-5">
+      <h2 class="section-title text-success">🧑‍🏫 Guides</h2>
+      <div class="card p-3">
+        <table class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID</th><th>Nom</th><th>Spécialité</th><th>Téléphone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Randria</td><td>Faune et flore</td><td>0345678901</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="mb-5">
+      <h2 class="section-title text-success">🔧 Services</h2>
+      <div class="card p-3">
+        <table class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID</th><th>Nom</th><th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Transport</td><td>Navettes aéroport & hôtels</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Messages -->
+    <section id="messages" class="mb-5">
+      <h2 class="section-title text-success">📩 Messages</h2>
+      <div class="card p-3">
+        <table class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID</th><th>Nom</th><th>Email</th><th>Sujet</th><th>Contenu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Fanja</td><td>fanja@email.com</td><td>Demande d'offre</td><td>Bonjour, je suis intéressée par...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted p-3 mt-5">
+      &copy; 2025 - Admin Tourisme Dashboard
+    </footer>
+
+  </div>
+
+</body>
+</html>

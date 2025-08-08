@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard TRIPHIVE</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+    }
+
+    /* Navbar gauche */
+    .sidebar {
+        height: 100vh;
+        width: 240px;
+        background-color: #2c3e50;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .sidebar button {
+        background: none;
+        border: none;
+        padding: 15px;
+        text-align: left;
+        color: #ecf0f1;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .sidebar button:hover {
+        background-color: #34495e;
+    }
+
+    /* Contenu principal */
+    .content {
+        margin-left: 240px;
+        padding: 20px;
+        flex: 1;
+    }
+
+    .section {
+        display: none;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    form {
+        background: #ecf0f1;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #bdc3c7;
+    }
+
+    button.submit {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button.submit:hover {
+        background-color: #2ecc71;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="sidebar">
+    <button onclick="showSection('utilisateur')">Utilisateur</button>
+    <button onclick="showSection('profil')">Profil</button>
+    <button onclick="showSection('produit')">Produit</button>
+    <button onclick="showSection('commande')">Commande</button>
+    <button onclick="showSection('reservation')">Réservation</button>
+    <button onclick="showSection('message')">Message</button>
+</div>
+
+<!-- Contenu -->
+<div class="content">
+    <div id="utilisateur" class="section">
+        <h2>Gestion des Utilisateurs</h2>
+        <form>
+            <input type="text" placeholder="Nom">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Mot de passe">
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <div id="profil" class="section">
+        <h2>Gestion des Profils</h2>
+        <form>
+            <input type="text" placeholder="Pseudo">
+            <textarea placeholder="Description"></textarea>
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <div id="produit" class="section">
+        <h2>Gestion des Produits</h2>
+        <form>
+            <input type="text" placeholder="Nom du produit">
+            <input type="number" placeholder="Prix">
+            <textarea placeholder="Description"></textarea>
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <div id="commande" class="section">
+        <h2>Gestion des Commandes</h2>
+        <form>
+            <input type="text" placeholder="ID Utilisateur">
+            <input type="text" placeholder="Produit">
+            <input type="number" placeholder="Quantité">
+            <button class="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <div id="reservation" class="section">
+        <h2>Liste des Réservations</h2>
+        <p>Affichage des réservations ici...</p>
+    </div>
+
+    <div id="message" class="section">
+        <h2>Messagerie</h2>
+        <p>Affichage des messages ici...</p>
+    </div>
+</div>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+    }
+
+    // Affiche la première section par défaut
+    showSection('utilisateur');
+</script>
+
+</body>
+</html>
