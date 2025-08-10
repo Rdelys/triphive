@@ -115,7 +115,7 @@ position: fixed;
                         </a>
                     </li>
                     <li class="nav-item mt-3">
-                        <a class="nav-link text-danger fw-bold" href="loginAdmin.html">
+                        <a class="nav-link text-danger fw-bold" href="loginAdmin.jsp">
                             <i class="bi bi-box-arrow-right"></i> Déconnexion
                         </a>
                     </li>

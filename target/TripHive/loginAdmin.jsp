@@ -110,7 +110,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     const pass = document.getElementById("password").value.trim();
     
     if(user === "admin" && pass === "admin123"){
-        window.location.href = "admin.html";
+        window.location.href = "admin.jsp";
     } else {
         document.getElementById("errorMsg").classList.remove("d-none");
     }
