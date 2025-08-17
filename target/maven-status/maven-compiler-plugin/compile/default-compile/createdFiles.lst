@@ -1,3 +1,6 @@
-com\triphive\model\Pays.class
-com\triphive\servlet\PaysServlet.class
+com\triphive\dao\DestinationDAO.class
 com\triphive\dao\PaysDAO.class
+com\triphive\model\Destination.class
+com\triphive\model\Pays.class
+com\triphive\servlet\DestinationServlet.class
+com\triphive\servlet\PaysServlet.class

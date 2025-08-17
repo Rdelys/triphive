@@ -1,5 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.List, com.triphive.model.Pays" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.triphive.model.Pays" %>
+<%@ page import="com.triphive.model.Destination" %>
+
+
+<%
+    List<com.triphive.model.Destination> destinationList = (List<com.triphive.model.Destination>) request.getAttribute("listeDestinations");
+%>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,7 +18,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <style>
     :root {
-        --imperial-green: #005a4b; /* Vert impÃ©rial */
+        --imperial-green: #005a4b; /* Vert impérial */
         --imperial-green-light: #007a63;
     }
 
@@ -107,8 +114,8 @@ position: fixed;
                         <div class="collapse" id="clientsMenu">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-3">
                                 <li><a href="#" class="nav-link" onclick="showSection('listeClients')">Liste clients</a></li>
-                                <li><a href="#" class="nav-link" onclick="showSection('resHotel')">RÃ©servations client hÃ´tel</a></li>
-                                <li><a href="#" class="nav-link" onclick="showSection('resGuide')">RÃ©servations guide</a></li>
+                                <li><a href="#" class="nav-link" onclick="showSection('resHotel')">Reservations client hôtel</a></li>
+                                <li><a href="#" class="nav-link" onclick="showSection('resGuide')">Reservations guide</a></li>
                             </ul>
                         </div>
                     </li>
@@ -119,7 +126,7 @@ position: fixed;
                     </li>
                     <li class="nav-item mt-3">
                         <a class="nav-link text-danger fw-bold" href="loginAdmin.jsp">
-                            <i class="bi bi-box-arrow-right"></i> DÃ©connexion
+                            <i class="bi bi-box-arrow-right"></i> Déconnexion
                         </a>
                     </li>
                 </ul>
@@ -153,7 +160,7 @@ position: fixed;
         <div class="col-md-2">
             <div class="card text-center shadow-sm border-warning">
                 <div class="card-body">
-                    <h5 class="card-title text-warning">RÃ©servations HÃ´tel</h5>
+                    <h5 class="card-title text-warning">Reservations Hôtel</h5>
                     <h3>120</h3>
                 </div>
             </div>
@@ -161,7 +168,7 @@ position: fixed;
         <div class="col-md-2">
             <div class="card text-center shadow-sm border-danger">
                 <div class="card-body">
-                    <h5 class="card-title text-danger">RÃ©servations Guide</h5>
+                    <h5 class="card-title text-danger">Reservations Guide</h5>
                     <h3>80</h3>
                 </div>
             </div>
@@ -189,7 +196,7 @@ position: fixed;
         <div class="col-md-12">
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white">
-                    RÃ©servations par jour (HÃ´tel & Guide)
+                    Réservations par jour (Hôtel & Guide)
                 </div>
                 <div class="card-body">
                     <canvas id="reservationsChart" height="100"></canvas>
@@ -241,9 +248,9 @@ position: fixed;
             </thead>
             <tbody>
 				<% 
-				    List<com.triphive.model.Pays> paysList = (List<com.triphive.model.Pays>) request.getAttribute("listePays");
-				    if (paysList != null) {
-				        for (com.triphive.model.Pays p : paysList) {
+				    List<com.triphive.model.Pays> paysListImportant = (List<com.triphive.model.Pays>) request.getAttribute("listePays");
+				    if (paysListImportant != null) {
+				        for (com.triphive.model.Pays p : paysListImportant) {
 				%>
 				    <tr>
 				        <td><%= p.getNom() %></td>
@@ -364,33 +371,7 @@ position: fixed;
   </div>
 </div>
 
-    <!-- Modal Ajouter Pays -->
-    <div class="modal fade" id="addCountryModal" tabindex="-1" aria-labelledby="addCountryModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header bg-success text-white">
-            <h5 class="modal-title" id="addCountryModalLabel">Ajouter un pays</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
-        </div>
-        <div class="modal-body">
-            <form>
-            <div class="mb-3">
-                <label class="form-label">Nom du pays</label>
-                <input type="text" class="form-control" placeholder="Ex: Espagne">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="3" placeholder="Entrez une description..."></textarea>
-            </div>
-            <div class="text-end">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-success">Enregistrer</button>
-            </div>
-            </form>
-        </div>
-        </div>
-    </div>
-    </div>
+    
 
 
           <div id="destination" class="section" style="display:none;">
@@ -413,202 +394,182 @@ position: fixed;
                     <th>Jours</th>
                     <th>Prix (â¬)</th>
                     <th>Personnes</th>
-                    <th>CatÃ©gorie</th>
+                    <th>Catégorie</th>
                     <th>Promotion</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
+                <%
+                    List<com.triphive.model.Destination> destList =
+                        (List<com.triphive.model.Destination>) request.getAttribute("listeDestinations");
+                    if (destList != null) {
+                        for (com.triphive.model.Destination d : destList) {
+                %>
                 <tr>
-                    <td>France</td>
-                    <td>Paris</td>
-                    <td>Visite de la capitale avec ses monuments iconiques.</td>
-                    <td>5</td>
-                    <td>800</td>
-                    <td>2</td>
-                    <td>Excursion urbaine</td>
-                    <td>-15%</td>
+                    <td><%= d.getPays() %></td>
+                    <td><%= d.getVille() %></td>
+                    <td><%= d.getDescription() %></td>
+                    <td><%= d.getJours() %></td>
+                    <td><%= d.getPrix() %></td>
+                    <td><%= d.getPersonnes() %></td>
+                    <td><%= d.getCategorie() %></td>
+                    <td><%= d.getPromotion() %></td>
                     <td class="text-center">
-                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editDestinationModal">
+                        <!-- Bouton Modifier -->
+                        <button class="btn btn-warning btn-sm text-white"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editDestinationModal"
+                                data-id="<%= d.getId() %>"
+                                data-pays="<%= d.getPays() %>"
+                                data-ville="<%= d.getVille() %>"
+                                data-description="<%= d.getDescription() %>"
+                                data-jours="<%= d.getJours() %>"
+                                data-prix="<%= d.getPrix() %>"
+                                data-personnes="<%= d.getPersonnes() %>"
+                                data-categorie="<%= d.getCategorie() %>"
+                                data-promotion="<%= d.getPromotion() %>">
                             <i class="bi bi-pencil-square"></i>
                         </button>
-                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteDestinationModal">
+
+                        <!-- Bouton Supprimer -->
+                        <button class="btn btn-danger btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteDestinationModal"
+                                data-id="<%= d.getId() %>">
                             <i class="bi bi-trash"></i>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Italie</td>
-                    <td>Rome</td>
-                    <td>DÃ©couverte de la ville Ã©ternelle et de son histoire.</td>
-                    <td>7</td>
-                    <td>950</td>
-                    <td>4</td>
-                    <td>Voyage culturel</td>
-                    <td>-50%</td>
-                    <td class="text-center">
-                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editDestinationModal">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
-                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteDestinationModal">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
+                <%  } } %>
             </tbody>
         </table>
     </div>
 </div>
 
 <!-- Modal Ajouter Destination -->
-<div class="modal fade" id="addDestinationModal" tabindex="-1" aria-labelledby="addDestinationModalLabel" aria-hidden="true">
+<div class="modal fade" id="addDestinationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header bg-success text-white">
-        <h5 class="modal-title" id="addDestinationModalLabel">Ajouter une destination</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        <h5 class="modal-title">Ajouter une destination</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Pays</label>
-              <select class="form-select">
-                <option>France</option>
-                <option>Italie</option>
-                <option>Espagne</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Ville</label>
-              <input type="text" class="form-control" placeholder="Ex: Marseille">
-            </div>
-            <div class="col-12">
-              <label class="form-label">Description</label>
-              <textarea class="form-control" rows="3" placeholder="Entrez une description..."></textarea>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de jours</label>
-              <input type="number" class="form-control" min="1">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Prix (â¬)</label>
-              <input type="number" class="form-control" min="0">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de personnes</label>
-              <input type="number" class="form-control" min="1">
-            </div>
-            <div class="col-md-6">
-            <label class="form-label">CatÃ©gorie</label>
-            <select class="form-select">
-                <option>Week-end</option>
-                <option>Vacances</option>
-                <option>Road trip</option>
-                <option>Voyage historique</option>
-                <option>Voyage en famille</option>
-                <option>Voyage Ã  la plage</option>
-            </select>
-            </div>
+      <form action="destination" method="post">
+        <input type="hidden" name="action" value="ajouter">
+        <div class="modal-body row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Pays</label>
+            <select class="form-select" name="pays" required>
+              <% 
+    List<com.triphive.model.Pays> paysSelectList = 
+        (List<com.triphive.model.Pays>) request.getAttribute("listePays");
+    if (paysSelectList != null) {
+        for (com.triphive.model.Pays p : paysSelectList) {
+%>
+<option value="<%= p.getId() %>"><%= p.getNom() %></option>
+<% 
+        }
+    }
+%>
 
-            <div class="col-md-3">
-              <label class="form-label">Promotion</label>
-              <input type="text" class="form-control" placeholder="Ex: -15%">
-            </div>
+            </select>
           </div>
-          <div class="text-end mt-3">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-success">Enregistrer</button>
+          <div class="col-md-6"><label class="form-label">Ville</label><input type="text" name="ville" class="form-control" required></div>
+          <div class="col-12"><label class="form-label">Description</label><textarea name="description" class="form-control"></textarea></div>
+          <div class="col-md-3"><label class="form-label">Jours</label><input type="number" name="jours" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Prix (€)</label><input type="number" step="0.01" name="prix" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Personnes</label><input type="number" name="personnes" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Promotion</label><input type="text" name="promotion" class="form-control"></div>
+          <div class="col-md-6">
+            <label class="form-label">Catégorie</label>
+            <select class="form-select" name="categorie">
+              <option>Week-end</option>
+              <option>Vacances</option>
+              <option>Road trip</option>
+              <option>Voyage historique</option>
+              <option>Voyage en famille</option>
+              <option>Voyage à la plage</option>
+            </select>
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-success">Enregistrer</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
+
 <!-- Modal Modifier Destination -->
-<div class="modal fade" id="editDestinationModal" tabindex="-1" aria-labelledby="editDestinationModalLabel" aria-hidden="true">
+<div class="modal fade" id="editDestinationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header bg-warning text-dark">
-        <h5 class="modal-title" id="editDestinationModalLabel">Modifier une destination</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        <h5 class="modal-title">Modifier une destination</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Pays</label>
-              <select class="form-select">
-                <option selected>France</option>
-                <option>Italie</option>
-                <option>Espagne</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Ville</label>
-              <input type="text" class="form-control" value="Paris">
-            </div>
-            <div class="col-12">
-              <label class="form-label">Description</label>
-              <textarea class="form-control" rows="3">Visite de la capitale avec ses monuments iconiques.</textarea>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de jours</label>
-              <input type="number" class="form-control" value="5">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Prix (â¬)</label>
-              <input type="number" class="form-control" value="800">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de personnes</label>
-              <input type="number" class="form-control" value="2">
-            </div>
-            <div class="col-md-6">
-            <label class="form-label">CatÃ©gorie</label>
-            <select class="form-select">
-                <option>Week-end</option>
-                <option>Vacances</option>
-                <option>Road trip</option>
-                <option>Voyage historique</option>
-                <option>Voyage en famille</option>
-                <option>Voyage Ã  la plage</option>
+      <form action="destination" method="post">
+        <input type="hidden" name="action" value="modifier">
+        <input type="hidden" name="id" id="edit-id">
+        <div class="modal-body row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Pays</label>
+            <select class="form-select" name="pays" id="edit-pays"></select>
+          </div>
+          <div class="col-md-6"><label class="form-label">Ville</label><input type="text" name="ville" id="edit-ville" class="form-control" required></div>
+          <div class="col-12"><label class="form-label">Description</label><textarea name="description" id="edit-description" class="form-control"></textarea></div>
+          <div class="col-md-3"><label class="form-label">Jours</label><input type="number" name="jours" id="edit-jours" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Prix (€)</label><input type="number" step="0.01" name="prix" id="edit-prix" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Personnes</label><input type="number" name="personnes" id="edit-personnes" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Promotion</label><input type="text" name="promotion" id="edit-promotion" class="form-control"></div>
+          <div class="col-md-6">
+            <label class="form-label">Catégorie</label>
+            <select class="form-select" name="categorie" id="edit-categorie">
+              <option>Week-end</option>
+              <option>Vacances</option>
+              <option>Road trip</option>
+              <option>Voyage historique</option>
+              <option>Voyage en famille</option>
+              <option>Voyage à la plage</option>
             </select>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Promotion</label>
-              <input type="text" class="form-control" value="-15%">
-            </div>
           </div>
-          <div class="text-end mt-3">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-warning text-white">Modifier</button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-warning text-white">Modifier</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
+
 <!-- Modal Supprimer Destination -->
-<div class="modal fade" id="deleteDestinationModal" tabindex="-1" aria-labelledby="deleteDestinationModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteDestinationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-danger text-white">
-        <h5 class="modal-title" id="deleteDestinationModalLabel">Confirmer la suppression</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        <h5 class="modal-title">Confirmer la suppression</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-        Voulez-vous vraiment supprimer cette destination ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-danger">Supprimer</button>
-      </div>
+      <form action="destination" method="post">
+        <input type="hidden" name="action" value="supprimer">
+        <input type="hidden" name="id" id="delete-id">
+        <div class="modal-body">
+          Voulez-vous vraiment supprimer cette destination ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-danger">Supprimer</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+
 <div id="gallery" class="section" style="display:none;">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Gestion de la Gallery</h2>
@@ -617,14 +578,14 @@ position: fixed;
         </button>
     </div>
 
-    <!-- Filtre par catÃ©gorie -->
+    <!-- Filtre par catégorie -->
     <div class="mb-3">
-        <label class="form-label">Filtrer par catÃ©gorie :</label>
+        <label class="form-label">Filtrer par catégorie :</label>
         <select id="filterCategory" class="form-select w-auto d-inline-block">
             <option value="">Toutes</option>
             <option>Tour du monde</option>
-            <option>Tour OcÃ©anique</option>
-            <option>Tour d'Ã©tÃ©</option>
+            <option>Tour Océanique</option>
+            <option>Tour d'été</option>
             <option>Tour sportif</option>
         </select>
     </div>
@@ -635,7 +596,7 @@ position: fixed;
             <thead class="table-success">
                 <tr>
                     <th>Nom</th>
-                    <th>CatÃ©gorie</th>
+                    <th>Catégorie</th>
                     <th>Photo</th>
                     <th class="text-center">Actions</th>
                 </tr>
@@ -651,9 +612,9 @@ position: fixed;
                         </button>
                     </td>
                 </tr>
-                <tr data-category="Tour OcÃ©anique">
+                <tr data-category="Tour Océanique">
                     <td>Plage Bora Bora</td>
-                    <td>Tour OcÃ©anique</td>
+                    <td>Tour Océanique</td>
                     <td><img src="https://via.placeholder.com/80" class="img-thumbnail"></td>
                     <td class="text-center">
                         <button class="btn btn-danger btn-sm">
@@ -683,11 +644,11 @@ position: fixed;
                         <input type="text" class="form-control" placeholder="Ex: Tour Eiffel">
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label">CatÃ©gorie</label>
+                        <label class="form-label">Catégorie</label>
                         <select class="form-select">
                             <option>Tour du monde</option>
-                            <option>Tour OcÃ©anique</option>
-                            <option>Tour d'Ã©tÃ©</option>
+                            <option>Tour Océanique</option>
+                            <option>Tour d'été</option>
                             <option>Tour sportif</option>
                         </select>
                     </div>
@@ -726,7 +687,7 @@ position: fixed;
                     <th>Nom</th>
                     <th>Pays</th>
                     <th>Ville</th>
-                    <th>TÃ©lÃ©phone</th>
+                    <th>Téléphone</th>
                     <th>Email</th>
                     <th class="text-center">Actions</th>
                 </tr>
@@ -790,7 +751,7 @@ position: fixed;
             <input type="text" class="form-control" placeholder="Ex: Paris">
           </div>
           <div class="mb-3">
-            <label class="form-label">TÃ©lÃ©phone</label>
+            <label class="form-label">Téléphone</label>
             <input type="tel" class="form-control" placeholder="Ex: +33 6 12 34 56 78">
           </div>
           <div class="mb-3">
@@ -830,7 +791,7 @@ position: fixed;
             <input type="text" class="form-control" value="Paris">
           </div>
           <div class="mb-3">
-            <label class="form-label">TÃ©lÃ©phone</label>
+            <label class="form-label">Téléphone</label>
             <input type="tel" class="form-control" value="+33 6 12 34 56 78">
           </div>
           <div class="mb-3">
@@ -873,7 +834,7 @@ position: fixed;
             <thead class="table-success">
                 <tr>
                     <th>Nom</th>
-                    <th>PrÃ©noms</th>
+                    <th>Prénoms</th>
                     <th>Adresse</th>
                     <th>Email</th>
                 </tr>
@@ -898,22 +859,22 @@ position: fixed;
 
 <!-- SECTION RESERVATIONS HOTEL -->
 <div id="resHotel" class="section" style="display:none;">
-    <h2>RÃ©servations Client HÃ´tel</h2>
+    <h2>Réservations Client Hôtel</h2>
     <div class="table-responsive">
         <table class="table table-striped table-bordered align-middle">
             <thead class="table-success">
                 <tr>
                     <th>Nom Client</th>
-                    <th>Nom HÃ´tel</th>
+                    <th>Nom Hôtel</th>
                     <th>Pays</th>
                     <th>Ville</th>
-                    <th>Date de rÃ©servation</th>
+                    <th>Date de réservation</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Jean Dupont</td>
-                    <td>HÃ´tel de Paris</td>
+                    <td>Hôtel de Paris</td>
                     <td>France</td>
                     <td>Paris</td>
                     <td>2025-08-10</td>
@@ -932,7 +893,7 @@ position: fixed;
 
 <!-- SECTION RESERVATIONS GUIDE -->
 <div id="resGuide" class="section" style="display:none;">
-    <h2>RÃ©servations Guide</h2>
+    <h2>Réservations Guide</h2>
     <div class="table-responsive">
         <table class="table table-striped table-bordered align-middle">
             <thead class="table-success">
@@ -941,7 +902,7 @@ position: fixed;
                     <th>Pays</th>
                     <th>Ville</th>
                     <th>Nom Guide</th>
-                    <th>Date de rÃ©servation</th>
+                    <th>Date de réservation</th>
                 </tr>
             </thead>
             <tbody>
@@ -1017,11 +978,11 @@ position: fixed;
             <p><strong>Date de paiement :</strong> 2025-08-05</p>
             <p><strong>Montant :</strong> 800 â¬</p>
             <hr>
-            <p><strong>DÃ©tails :</strong></p>
+            <p><strong>Détails :</strong></p>
             <ul>
                 <li>Destination : Paris, France</li>
                 <li>Nombre de jours : 5</li>
-                <li>CatÃ©gorie : Excursion urbaine</li>
+                <li>Catégorie : Excursion urbaine</li>
             </ul>
             <p class="mt-4">Merci pour votre confiance.</p>
         </div>
@@ -1051,10 +1012,10 @@ position: fixed;
         document.querySelectorAll(`.nav-link[onclick="showSection('${id}')"]`).forEach(link => link.classList.add('active'));
     }
 
-    // Affiche Dashboard par dÃ©faut
+    // Affiche Dashboard par défaut
     showSection('dashboard');
 
-     // Filtrage par catÃ©gorie
+     // Filtrage par catégorie
     document.getElementById('filterCategory').addEventListener('change', function(){
         const category = this.value;
         document.querySelectorAll('#photoTable tbody tr').forEach(row => {
@@ -1097,7 +1058,7 @@ new Chart(document.getElementById('reservationsChart'), {
         labels: ['1 AoÃ»t', '2 AoÃ»t', '3 AoÃ»t', '4 AoÃ»t', '5 AoÃ»t', '6 AoÃ»t', '7 AoÃ»t'],
         datasets: [
             {
-                label: 'HÃ´tel',
+                label: 'Hôtel',
                 data: [12, 19, 3, 5, 2, 3, 10],
                 borderColor: 'blue',
                 fill: false
@@ -1153,6 +1114,31 @@ const editModal = document.getElementById('editCountryModal');
     const button = event.relatedTarget;
     document.getElementById('delete-id').value = button.getAttribute('data-id');
   });
+
+  const editDestinationModal = document.getElementById('editDestinationModal');
+editDestinationModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    document.getElementById('edit-id').value = button.getAttribute('data-id');
+    document.getElementById('edit-ville').value = button.getAttribute('data-ville');
+    document.getElementById('edit-description').value = button.getAttribute('data-description');
+    document.getElementById('edit-jours').value = button.getAttribute('data-jours');
+    document.getElementById('edit-prix').value = button.getAttribute('data-prix');
+    document.getElementById('edit-personnes').value = button.getAttribute('data-personnes');
+    document.getElementById('edit-promotion').value = button.getAttribute('data-promotion');
+    document.getElementById('edit-categorie').value = button.getAttribute('data-categorie');
+
+    // Pays : on sélectionne directement la valeur déjà générée en JSP
+    let paysSelect = document.getElementById('edit-pays');
+    paysSelect.value = button.getAttribute('data-pays');
+});
+
+// ✅ bien fermer l'accolade avant de déclarer l'autre modal
+const deleteDestinationModal = document.getElementById('deleteDestinationModal');
+deleteDestinationModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    document.getElementById('delete-id').value = button.getAttribute('data-id');
+});
+
 </script>
 
 </body>

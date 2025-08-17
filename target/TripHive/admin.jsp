@@ -1,5 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.List, com.triphive.model.Pays" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.triphive.model.Pays" %>
+<%@ page import="com.triphive.model.Destination" %>
+
+
+<%
+    List<com.triphive.model.Destination> destinationList = (List<com.triphive.model.Destination>) request.getAttribute("listeDestinations");
+%>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -241,27 +248,35 @@ position: fixed;
             </thead>
             <tbody>
 				<% 
-				    List<com.triphive.model.Pays> paysList = (List<com.triphive.model.Pays>) request.getAttribute("listePays");
-				    if (paysList != null) {
-				        for (com.triphive.model.Pays p : paysList) {
+				    List<com.triphive.model.Pays> paysListImportant = (List<com.triphive.model.Pays>) request.getAttribute("listePays");
+				    if (paysListImportant != null) {
+				        for (com.triphive.model.Pays p : paysListImportant) {
 				%>
 				    <tr>
 				        <td><%= p.getNom() %></td>
 				        <td><%= p.getDescription() %></td>
 				        <td class="text-center">
-				            <!-- Bouton Modifier -->
-				            <form action="pays" method="post" style="display:inline;">
-				                <input type="hidden" name="action" value="modifier">
-				                <input type="hidden" name="id" value="<%= p.getId() %>">
-				                <button class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></button>
-				            </form>
-				            <!-- Bouton Supprimer -->
-				            <form action="pays" method="post" style="display:inline;">
-				                <input type="hidden" name="action" value="supprimer">
-				                <input type="hidden" name="id" value="<%= p.getId() %>">
-				                <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-				            </form>
-				        </td>
+    <!-- Bouton Modifier -->
+    <button 
+        class="btn btn-warning btn-sm text-white"
+        data-bs-toggle="modal" 
+        data-bs-target="#editCountryModal"
+        data-id="<%= p.getId() %>"
+        data-nom="<%= p.getNom() %>"
+        data-description="<%= p.getDescription() %>">
+        <i class="bi bi-pencil-square"></i>
+    </button>
+
+    <!-- Bouton Supprimer -->
+    <button 
+        class="btn btn-danger btn-sm"
+        data-bs-toggle="modal" 
+        data-bs-target="#deleteCountryModal"
+        data-id="<%= p.getId() %>">
+        <i class="bi bi-trash"></i>
+    </button>
+</td>
+
 				    </tr>
 				<%
 				        }
@@ -310,20 +325,23 @@ position: fixed;
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Nom du pays</label>
-            <input type="text" class="form-control" value="France">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea class="form-control" rows="3">Pays de l'Europe de l'Ouest cÃ©lÃ¨bre pour sa gastronomie et sa culture.</textarea>
-          </div>
-          <div class="text-end">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-warning text-white">Modifier</button>
-          </div>
-        </form>
+        <form action="pays" method="post">
+  <input type="hidden" name="action" value="modifier">
+  <input type="hidden" name="id" id="edit-id">
+  <div class="mb-3">
+    <label class="form-label">Nom du pays</label>
+    <input type="text" class="form-control" name="nom" id="edit-nom" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" name="description" rows="3" id="edit-description"></textarea>
+  </div>
+  <div class="text-end">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+    <button type="submit" class="btn btn-warning text-white">Modifier</button>
+  </div>
+</form>
+
       </div>
     </div>
   </div>
@@ -337,44 +355,23 @@ position: fixed;
         <h5 class="modal-title" id="deleteCountryModalLabel">Confirmer la suppression</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
-      <div class="modal-body">
-        Voulez-vous vraiment supprimer ce pays ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-danger">Supprimer</button>
-      </div>
+      <form action="pays" method="post">
+  <input type="hidden" name="action" value="supprimer">
+  <input type="hidden" name="id" id="delete-id">
+  <div class="modal-body">
+    Voulez-vous vraiment supprimer ce pays ?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+  </div>
+</form>
+
     </div>
   </div>
 </div>
 
-    <!-- Modal Ajouter Pays -->
-    <div class="modal fade" id="addCountryModal" tabindex="-1" aria-labelledby="addCountryModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header bg-success text-white">
-            <h5 class="modal-title" id="addCountryModalLabel">Ajouter un pays</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
-        </div>
-        <div class="modal-body">
-            <form>
-            <div class="mb-3">
-                <label class="form-label">Nom du pays</label>
-                <input type="text" class="form-control" placeholder="Ex: Espagne">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="3" placeholder="Entrez une description..."></textarea>
-            </div>
-            <div class="text-end">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-success">Enregistrer</button>
-            </div>
-            </form>
-        </div>
-        </div>
-    </div>
-    </div>
+    
 
 
           <div id="destination" class="section" style="display:none;">
@@ -403,196 +400,176 @@ position: fixed;
                 </tr>
             </thead>
             <tbody>
+                <%
+                    List<com.triphive.model.Destination> destList =
+                        (List<com.triphive.model.Destination>) request.getAttribute("listeDestinations");
+                    if (destList != null) {
+                        for (com.triphive.model.Destination d : destList) {
+                %>
                 <tr>
-                    <td>France</td>
-                    <td>Paris</td>
-                    <td>Visite de la capitale avec ses monuments iconiques.</td>
-                    <td>5</td>
-                    <td>800</td>
-                    <td>2</td>
-                    <td>Excursion urbaine</td>
-                    <td>-15%</td>
+                    <td><%= d.getPays() %></td>
+                    <td><%= d.getVille() %></td>
+                    <td><%= d.getDescription() %></td>
+                    <td><%= d.getJours() %></td>
+                    <td><%= d.getPrix() %></td>
+                    <td><%= d.getPersonnes() %></td>
+                    <td><%= d.getCategorie() %></td>
+                    <td><%= d.getPromotion() %></td>
                     <td class="text-center">
-                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editDestinationModal">
+                        <!-- Bouton Modifier -->
+                        <button class="btn btn-warning btn-sm text-white"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editDestinationModal"
+                                data-id="<%= d.getId() %>"
+                                data-pays="<%= d.getPays() %>"
+                                data-ville="<%= d.getVille() %>"
+                                data-description="<%= d.getDescription() %>"
+                                data-jours="<%= d.getJours() %>"
+                                data-prix="<%= d.getPrix() %>"
+                                data-personnes="<%= d.getPersonnes() %>"
+                                data-categorie="<%= d.getCategorie() %>"
+                                data-promotion="<%= d.getPromotion() %>">
                             <i class="bi bi-pencil-square"></i>
                         </button>
-                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteDestinationModal">
+
+                        <!-- Bouton Supprimer -->
+                        <button class="btn btn-danger btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteDestinationModal"
+                                data-id="<%= d.getId() %>">
                             <i class="bi bi-trash"></i>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Italie</td>
-                    <td>Rome</td>
-                    <td>DÃ©couverte de la ville Ã©ternelle et de son histoire.</td>
-                    <td>7</td>
-                    <td>950</td>
-                    <td>4</td>
-                    <td>Voyage culturel</td>
-                    <td>-50%</td>
-                    <td class="text-center">
-                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editDestinationModal">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
-                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteDestinationModal">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
+                <%  } } %>
             </tbody>
         </table>
     </div>
 </div>
 
 <!-- Modal Ajouter Destination -->
-<div class="modal fade" id="addDestinationModal" tabindex="-1" aria-labelledby="addDestinationModalLabel" aria-hidden="true">
+<div class="modal fade" id="addDestinationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header bg-success text-white">
-        <h5 class="modal-title" id="addDestinationModalLabel">Ajouter une destination</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        <h5 class="modal-title">Ajouter une destination</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Pays</label>
-              <select class="form-select">
-                <option>France</option>
-                <option>Italie</option>
-                <option>Espagne</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Ville</label>
-              <input type="text" class="form-control" placeholder="Ex: Marseille">
-            </div>
-            <div class="col-12">
-              <label class="form-label">Description</label>
-              <textarea class="form-control" rows="3" placeholder="Entrez une description..."></textarea>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de jours</label>
-              <input type="number" class="form-control" min="1">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Prix (â¬)</label>
-              <input type="number" class="form-control" min="0">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de personnes</label>
-              <input type="number" class="form-control" min="1">
-            </div>
-            <div class="col-md-6">
-            <label class="form-label">CatÃ©gorie</label>
-            <select class="form-select">
-                <option>Week-end</option>
-                <option>Vacances</option>
-                <option>Road trip</option>
-                <option>Voyage historique</option>
-                <option>Voyage en famille</option>
-                <option>Voyage Ã  la plage</option>
-            </select>
-            </div>
+      <form action="destination" method="post">
+        <input type="hidden" name="action" value="ajouter">
+        <div class="modal-body row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Pays</label>
+            <select class="form-select" name="pays" required>
+              <% 
+    List<com.triphive.model.Pays> paysSelectList = 
+        (List<com.triphive.model.Pays>) request.getAttribute("listePays");
+    if (paysSelectList != null) {
+        for (com.triphive.model.Pays p : paysSelectList) {
+%>
+<option value="<%= p.getId() %>"><%= p.getNom() %></option>
+<% 
+        }
+    }
+%>
 
-            <div class="col-md-3">
-              <label class="form-label">Promotion</label>
-              <input type="text" class="form-control" placeholder="Ex: -15%">
-            </div>
+            </select>
           </div>
-          <div class="text-end mt-3">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-success">Enregistrer</button>
+          <div class="col-md-6"><label class="form-label">Ville</label><input type="text" name="ville" class="form-control" required></div>
+          <div class="col-12"><label class="form-label">Description</label><textarea name="description" class="form-control"></textarea></div>
+          <div class="col-md-3"><label class="form-label">Jours</label><input type="number" name="jours" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Prix (€)</label><input type="number" step="0.01" name="prix" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Personnes</label><input type="number" name="personnes" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Promotion</label><input type="text" name="promotion" class="form-control"></div>
+          <div class="col-md-6">
+            <label class="form-label">Catégorie</label>
+            <select class="form-select" name="categorie">
+              <option>Week-end</option>
+              <option>Vacances</option>
+              <option>Road trip</option>
+              <option>Voyage historique</option>
+              <option>Voyage en famille</option>
+              <option>Voyage à la plage</option>
+            </select>
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-success">Enregistrer</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
+
 <!-- Modal Modifier Destination -->
-<div class="modal fade" id="editDestinationModal" tabindex="-1" aria-labelledby="editDestinationModalLabel" aria-hidden="true">
+<div class="modal fade" id="editDestinationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header bg-warning text-dark">
-        <h5 class="modal-title" id="editDestinationModalLabel">Modifier une destination</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        <h5 class="modal-title">Modifier une destination</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Pays</label>
-              <select class="form-select">
-                <option selected>France</option>
-                <option>Italie</option>
-                <option>Espagne</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Ville</label>
-              <input type="text" class="form-control" value="Paris">
-            </div>
-            <div class="col-12">
-              <label class="form-label">Description</label>
-              <textarea class="form-control" rows="3">Visite de la capitale avec ses monuments iconiques.</textarea>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de jours</label>
-              <input type="number" class="form-control" value="5">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Prix (â¬)</label>
-              <input type="number" class="form-control" value="800">
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Nombre de personnes</label>
-              <input type="number" class="form-control" value="2">
-            </div>
-            <div class="col-md-6">
-            <label class="form-label">CatÃ©gorie</label>
-            <select class="form-select">
-                <option>Week-end</option>
-                <option>Vacances</option>
-                <option>Road trip</option>
-                <option>Voyage historique</option>
-                <option>Voyage en famille</option>
-                <option>Voyage Ã  la plage</option>
+      <form action="destination" method="post">
+        <input type="hidden" name="action" value="modifier">
+        <input type="hidden" name="id" id="edit-id">
+        <div class="modal-body row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Pays</label>
+            <select class="form-select" name="pays" id="edit-pays"></select>
+          </div>
+          <div class="col-md-6"><label class="form-label">Ville</label><input type="text" name="ville" id="edit-ville" class="form-control" required></div>
+          <div class="col-12"><label class="form-label">Description</label><textarea name="description" id="edit-description" class="form-control"></textarea></div>
+          <div class="col-md-3"><label class="form-label">Jours</label><input type="number" name="jours" id="edit-jours" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Prix (€)</label><input type="number" step="0.01" name="prix" id="edit-prix" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Personnes</label><input type="number" name="personnes" id="edit-personnes" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Promotion</label><input type="text" name="promotion" id="edit-promotion" class="form-control"></div>
+          <div class="col-md-6">
+            <label class="form-label">Catégorie</label>
+            <select class="form-select" name="categorie" id="edit-categorie">
+              <option>Week-end</option>
+              <option>Vacances</option>
+              <option>Road trip</option>
+              <option>Voyage historique</option>
+              <option>Voyage en famille</option>
+              <option>Voyage à la plage</option>
             </select>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Promotion</label>
-              <input type="text" class="form-control" value="-15%">
-            </div>
           </div>
-          <div class="text-end mt-3">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-warning text-white">Modifier</button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-warning text-white">Modifier</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
+
 <!-- Modal Supprimer Destination -->
-<div class="modal fade" id="deleteDestinationModal" tabindex="-1" aria-labelledby="deleteDestinationModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteDestinationModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-danger text-white">
-        <h5 class="modal-title" id="deleteDestinationModalLabel">Confirmer la suppression</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        <h5 class="modal-title">Confirmer la suppression</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-        Voulez-vous vraiment supprimer cette destination ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-danger">Supprimer</button>
-      </div>
+      <form action="destination" method="post">
+        <input type="hidden" name="action" value="supprimer">
+        <input type="hidden" name="id" id="delete-id">
+        <div class="modal-body">
+          Voulez-vous vraiment supprimer cette destination ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-danger">Supprimer</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+
 <div id="gallery" class="section" style="display:none;">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Gestion de la Gallery</h2>
@@ -1123,6 +1100,45 @@ new Chart(document.getElementById('connexionsChart'), {
         }]
     }
 });
+
+const editModal = document.getElementById('editCountryModal');
+  editModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    document.getElementById('edit-id').value = button.getAttribute('data-id');
+    document.getElementById('edit-nom').value = button.getAttribute('data-nom');
+    document.getElementById('edit-description').value = button.getAttribute('data-description');
+  });
+
+  const deleteModal = document.getElementById('deleteCountryModal');
+  deleteModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    document.getElementById('delete-id').value = button.getAttribute('data-id');
+  });
+
+  const editDestinationModal = document.getElementById('editDestinationModal');
+editDestinationModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    document.getElementById('edit-id').value = button.getAttribute('data-id');
+    document.getElementById('edit-ville').value = button.getAttribute('data-ville');
+    document.getElementById('edit-description').value = button.getAttribute('data-description');
+    document.getElementById('edit-jours').value = button.getAttribute('data-jours');
+    document.getElementById('edit-prix').value = button.getAttribute('data-prix');
+    document.getElementById('edit-personnes').value = button.getAttribute('data-personnes');
+    document.getElementById('edit-promotion').value = button.getAttribute('data-promotion');
+    document.getElementById('edit-categorie').value = button.getAttribute('data-categorie');
+
+    // Pays : on sélectionne directement la valeur déjà générée en JSP
+    let paysSelect = document.getElementById('edit-pays');
+    paysSelect.value = button.getAttribute('data-pays');
+});
+
+// ✅ bien fermer l'accolade avant de déclarer l'autre modal
+const deleteDestinationModal = document.getElementById('deleteDestinationModal');
+deleteDestinationModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    document.getElementById('delete-id').value = button.getAttribute('data-id');
+});
+
 </script>
 
 </body>
