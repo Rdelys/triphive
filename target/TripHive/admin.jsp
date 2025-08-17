@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List, com.triphive.model.Pays" %>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,7 +11,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <style>
     :root {
-        --imperial-green: #005a4b; /* Vert impérial */
+        --imperial-green: #005a4b; /* Vert impÃ©rial */
         --imperial-green-light: #007a63;
     }
 
@@ -104,8 +107,8 @@ position: fixed;
                         <div class="collapse" id="clientsMenu">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-3">
                                 <li><a href="#" class="nav-link" onclick="showSection('listeClients')">Liste clients</a></li>
-                                <li><a href="#" class="nav-link" onclick="showSection('resHotel')">Réservations client hôtel</a></li>
-                                <li><a href="#" class="nav-link" onclick="showSection('resGuide')">Réservations guide</a></li>
+                                <li><a href="#" class="nav-link" onclick="showSection('resHotel')">RÃ©servations client hÃ´tel</a></li>
+                                <li><a href="#" class="nav-link" onclick="showSection('resGuide')">RÃ©servations guide</a></li>
                             </ul>
                         </div>
                     </li>
@@ -116,7 +119,7 @@ position: fixed;
                     </li>
                     <li class="nav-item mt-3">
                         <a class="nav-link text-danger fw-bold" href="loginAdmin.jsp">
-                            <i class="bi bi-box-arrow-right"></i> Déconnexion
+                            <i class="bi bi-box-arrow-right"></i> DÃ©connexion
                         </a>
                     </li>
                 </ul>
@@ -150,7 +153,7 @@ position: fixed;
         <div class="col-md-2">
             <div class="card text-center shadow-sm border-warning">
                 <div class="card-body">
-                    <h5 class="card-title text-warning">Réservations Hôtel</h5>
+                    <h5 class="card-title text-warning">RÃ©servations HÃ´tel</h5>
                     <h3>120</h3>
                 </div>
             </div>
@@ -158,7 +161,7 @@ position: fixed;
         <div class="col-md-2">
             <div class="card text-center shadow-sm border-danger">
                 <div class="card-body">
-                    <h5 class="card-title text-danger">Réservations Guide</h5>
+                    <h5 class="card-title text-danger">RÃ©servations Guide</h5>
                     <h3>80</h3>
                 </div>
             </div>
@@ -186,7 +189,7 @@ position: fixed;
         <div class="col-md-12">
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white">
-                    Réservations par jour (Hôtel & Guide)
+                    RÃ©servations par jour (HÃ´tel & Guide)
                 </div>
                 <div class="card-body">
                     <canvas id="reservationsChart" height="100"></canvas>
@@ -237,31 +240,34 @@ position: fixed;
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>France</td>
-                    <td>Pays de l'Europe de l'Ouest célèbre pour sa gastronomie et sa culture.</td>
-                    <td class="text-center">
-                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editCountryModal">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
-                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCountryModal">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Italie</td>
-                    <td>Pays d'Europe du Sud connu pour ses monuments historiques et sa cuisine.</td>
-                    <td class="text-center">
-                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editCountryModal">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
-                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCountryModal">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
+				<% 
+				    List<com.triphive.model.Pays> paysList = (List<com.triphive.model.Pays>) request.getAttribute("listePays");
+				    if (paysList != null) {
+				        for (com.triphive.model.Pays p : paysList) {
+				%>
+				    <tr>
+				        <td><%= p.getNom() %></td>
+				        <td><%= p.getDescription() %></td>
+				        <td class="text-center">
+				            <!-- Bouton Modifier -->
+				            <form action="pays" method="post" style="display:inline;">
+				                <input type="hidden" name="action" value="modifier">
+				                <input type="hidden" name="id" value="<%= p.getId() %>">
+				                <button class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></button>
+				            </form>
+				            <!-- Bouton Supprimer -->
+				            <form action="pays" method="post" style="display:inline;">
+				                <input type="hidden" name="action" value="supprimer">
+				                <input type="hidden" name="id" value="<%= p.getId() %>">
+				                <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+				            </form>
+				        </td>
+				    </tr>
+				<%
+				        }
+				    }
+				%>
+				</tbody>
         </table>
     </div>
 </div>
@@ -275,20 +281,21 @@ position: fixed;
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Nom du pays</label>
-            <input type="text" class="form-control" placeholder="Ex: Espagne">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea class="form-control" rows="3" placeholder="Entrez une description..."></textarea>
-          </div>
-          <div class="text-end">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-success">Enregistrer</button>
-          </div>
-        </form>
+        <form action="pays" method="post">
+		  <input type="hidden" name="action" value="ajouter">
+		  <div class="mb-3">
+		    <label class="form-label">Nom du pays</label>
+		    <input type="text" class="form-control" name="nom" required>
+		  </div>
+		  <div class="mb-3">
+		    <label class="form-label">Description</label>
+		    <textarea class="form-control" name="description" rows="3"></textarea>
+		  </div>
+		  <div class="text-end">
+		    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+		    <button type="submit" class="btn btn-success">Enregistrer</button>
+		  </div>
+		</form>
       </div>
     </div>
   </div>
@@ -310,7 +317,7 @@ position: fixed;
           </div>
           <div class="mb-3">
             <label class="form-label">Description</label>
-            <textarea class="form-control" rows="3">Pays de l'Europe de l'Ouest célèbre pour sa gastronomie et sa culture.</textarea>
+            <textarea class="form-control" rows="3">Pays de l'Europe de l'Ouest cÃ©lÃ¨bre pour sa gastronomie et sa culture.</textarea>
           </div>
           <div class="text-end">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
@@ -388,9 +395,9 @@ position: fixed;
                     <th>Ville</th>
                     <th>Description</th>
                     <th>Jours</th>
-                    <th>Prix (€)</th>
+                    <th>Prix (â¬)</th>
                     <th>Personnes</th>
-                    <th>Catégorie</th>
+                    <th>CatÃ©gorie</th>
                     <th>Promotion</th>
                     <th class="text-center">Actions</th>
                 </tr>
@@ -417,7 +424,7 @@ position: fixed;
                 <tr>
                     <td>Italie</td>
                     <td>Rome</td>
-                    <td>Découverte de la ville éternelle et de son histoire.</td>
+                    <td>DÃ©couverte de la ville Ã©ternelle et de son histoire.</td>
                     <td>7</td>
                     <td>950</td>
                     <td>4</td>
@@ -469,7 +476,7 @@ position: fixed;
               <input type="number" class="form-control" min="1">
             </div>
             <div class="col-md-3">
-              <label class="form-label">Prix (€)</label>
+              <label class="form-label">Prix (â¬)</label>
               <input type="number" class="form-control" min="0">
             </div>
             <div class="col-md-3">
@@ -477,14 +484,14 @@ position: fixed;
               <input type="number" class="form-control" min="1">
             </div>
             <div class="col-md-6">
-            <label class="form-label">Catégorie</label>
+            <label class="form-label">CatÃ©gorie</label>
             <select class="form-select">
                 <option>Week-end</option>
                 <option>Vacances</option>
                 <option>Road trip</option>
                 <option>Voyage historique</option>
                 <option>Voyage en famille</option>
-                <option>Voyage à la plage</option>
+                <option>Voyage Ã  la plage</option>
             </select>
             </div>
 
@@ -535,7 +542,7 @@ position: fixed;
               <input type="number" class="form-control" value="5">
             </div>
             <div class="col-md-3">
-              <label class="form-label">Prix (€)</label>
+              <label class="form-label">Prix (â¬)</label>
               <input type="number" class="form-control" value="800">
             </div>
             <div class="col-md-3">
@@ -543,14 +550,14 @@ position: fixed;
               <input type="number" class="form-control" value="2">
             </div>
             <div class="col-md-6">
-            <label class="form-label">Catégorie</label>
+            <label class="form-label">CatÃ©gorie</label>
             <select class="form-select">
                 <option>Week-end</option>
                 <option>Vacances</option>
                 <option>Road trip</option>
                 <option>Voyage historique</option>
                 <option>Voyage en famille</option>
-                <option>Voyage à la plage</option>
+                <option>Voyage Ã  la plage</option>
             </select>
             </div>
             <div class="col-md-3">
@@ -594,14 +601,14 @@ position: fixed;
         </button>
     </div>
 
-    <!-- Filtre par catégorie -->
+    <!-- Filtre par catÃ©gorie -->
     <div class="mb-3">
-        <label class="form-label">Filtrer par catégorie :</label>
+        <label class="form-label">Filtrer par catÃ©gorie :</label>
         <select id="filterCategory" class="form-select w-auto d-inline-block">
             <option value="">Toutes</option>
             <option>Tour du monde</option>
-            <option>Tour Océanique</option>
-            <option>Tour d'été</option>
+            <option>Tour OcÃ©anique</option>
+            <option>Tour d'Ã©tÃ©</option>
             <option>Tour sportif</option>
         </select>
     </div>
@@ -612,7 +619,7 @@ position: fixed;
             <thead class="table-success">
                 <tr>
                     <th>Nom</th>
-                    <th>Catégorie</th>
+                    <th>CatÃ©gorie</th>
                     <th>Photo</th>
                     <th class="text-center">Actions</th>
                 </tr>
@@ -628,9 +635,9 @@ position: fixed;
                         </button>
                     </td>
                 </tr>
-                <tr data-category="Tour Océanique">
+                <tr data-category="Tour OcÃ©anique">
                     <td>Plage Bora Bora</td>
-                    <td>Tour Océanique</td>
+                    <td>Tour OcÃ©anique</td>
                     <td><img src="https://via.placeholder.com/80" class="img-thumbnail"></td>
                     <td class="text-center">
                         <button class="btn btn-danger btn-sm">
@@ -660,11 +667,11 @@ position: fixed;
                         <input type="text" class="form-control" placeholder="Ex: Tour Eiffel">
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label">Catégorie</label>
+                        <label class="form-label">CatÃ©gorie</label>
                         <select class="form-select">
                             <option>Tour du monde</option>
-                            <option>Tour Océanique</option>
-                            <option>Tour d'été</option>
+                            <option>Tour OcÃ©anique</option>
+                            <option>Tour d'Ã©tÃ©</option>
                             <option>Tour sportif</option>
                         </select>
                     </div>
@@ -703,7 +710,7 @@ position: fixed;
                     <th>Nom</th>
                     <th>Pays</th>
                     <th>Ville</th>
-                    <th>Téléphone</th>
+                    <th>TÃ©lÃ©phone</th>
                     <th>Email</th>
                     <th class="text-center">Actions</th>
                 </tr>
@@ -767,7 +774,7 @@ position: fixed;
             <input type="text" class="form-control" placeholder="Ex: Paris">
           </div>
           <div class="mb-3">
-            <label class="form-label">Téléphone</label>
+            <label class="form-label">TÃ©lÃ©phone</label>
             <input type="tel" class="form-control" placeholder="Ex: +33 6 12 34 56 78">
           </div>
           <div class="mb-3">
@@ -807,7 +814,7 @@ position: fixed;
             <input type="text" class="form-control" value="Paris">
           </div>
           <div class="mb-3">
-            <label class="form-label">Téléphone</label>
+            <label class="form-label">TÃ©lÃ©phone</label>
             <input type="tel" class="form-control" value="+33 6 12 34 56 78">
           </div>
           <div class="mb-3">
@@ -850,7 +857,7 @@ position: fixed;
             <thead class="table-success">
                 <tr>
                     <th>Nom</th>
-                    <th>Prénoms</th>
+                    <th>PrÃ©noms</th>
                     <th>Adresse</th>
                     <th>Email</th>
                 </tr>
@@ -875,22 +882,22 @@ position: fixed;
 
 <!-- SECTION RESERVATIONS HOTEL -->
 <div id="resHotel" class="section" style="display:none;">
-    <h2>Réservations Client Hôtel</h2>
+    <h2>RÃ©servations Client HÃ´tel</h2>
     <div class="table-responsive">
         <table class="table table-striped table-bordered align-middle">
             <thead class="table-success">
                 <tr>
                     <th>Nom Client</th>
-                    <th>Nom Hôtel</th>
+                    <th>Nom HÃ´tel</th>
                     <th>Pays</th>
                     <th>Ville</th>
-                    <th>Date de réservation</th>
+                    <th>Date de rÃ©servation</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Jean Dupont</td>
-                    <td>Hôtel de Paris</td>
+                    <td>HÃ´tel de Paris</td>
                     <td>France</td>
                     <td>Paris</td>
                     <td>2025-08-10</td>
@@ -909,7 +916,7 @@ position: fixed;
 
 <!-- SECTION RESERVATIONS GUIDE -->
 <div id="resGuide" class="section" style="display:none;">
-    <h2>Réservations Guide</h2>
+    <h2>RÃ©servations Guide</h2>
     <div class="table-responsive">
         <table class="table table-striped table-bordered align-middle">
             <thead class="table-success">
@@ -918,7 +925,7 @@ position: fixed;
                     <th>Pays</th>
                     <th>Ville</th>
                     <th>Nom Guide</th>
-                    <th>Date de réservation</th>
+                    <th>Date de rÃ©servation</th>
                 </tr>
             </thead>
             <tbody>
@@ -946,7 +953,7 @@ position: fixed;
         <table class="table table-striped table-bordered align-middle">
             <thead class="table-success">
                 <tr>
-                    <th>Prix (€)</th>
+                    <th>Prix (â¬)</th>
                     <th>Date de paiement</th>
                     <th>Nom du client</th>
                     <th class="text-center">Actions</th>
@@ -992,13 +999,13 @@ position: fixed;
             <hr>
             <p><strong>Nom du client :</strong> Jean Dupont</p>
             <p><strong>Date de paiement :</strong> 2025-08-05</p>
-            <p><strong>Montant :</strong> 800 €</p>
+            <p><strong>Montant :</strong> 800 â¬</p>
             <hr>
-            <p><strong>Détails :</strong></p>
+            <p><strong>DÃ©tails :</strong></p>
             <ul>
                 <li>Destination : Paris, France</li>
                 <li>Nombre de jours : 5</li>
-                <li>Catégorie : Excursion urbaine</li>
+                <li>CatÃ©gorie : Excursion urbaine</li>
             </ul>
             <p class="mt-4">Merci pour votre confiance.</p>
         </div>
@@ -1028,10 +1035,10 @@ position: fixed;
         document.querySelectorAll(`.nav-link[onclick="showSection('${id}')"]`).forEach(link => link.classList.add('active'));
     }
 
-    // Affiche Dashboard par défaut
+    // Affiche Dashboard par dÃ©faut
     showSection('dashboard');
 
-     // Filtrage par catégorie
+     // Filtrage par catÃ©gorie
     document.getElementById('filterCategory').addEventListener('change', function(){
         const category = this.value;
         document.querySelectorAll('#photoTable tbody tr').forEach(row => {
@@ -1071,10 +1078,10 @@ function imprimerFacture(){
 new Chart(document.getElementById('reservationsChart'), {
     type: 'line',
     data: {
-        labels: ['1 Août', '2 Août', '3 Août', '4 Août', '5 Août', '6 Août', '7 Août'],
+        labels: ['1 AoÃ»t', '2 AoÃ»t', '3 AoÃ»t', '4 AoÃ»t', '5 AoÃ»t', '6 AoÃ»t', '7 AoÃ»t'],
         datasets: [
             {
-                label: 'Hôtel',
+                label: 'HÃ´tel',
                 data: [12, 19, 3, 5, 2, 3, 10],
                 borderColor: 'blue',
                 fill: false
@@ -1093,9 +1100,9 @@ new Chart(document.getElementById('reservationsChart'), {
 new Chart(document.getElementById('paiementsChart'), {
     type: 'line',
     data: {
-        labels: ['1 Août', '2 Août', '3 Août', '4 Août', '5 Août', '6 Août', '7 Août'],
+        labels: ['1 AoÃ»t', '2 AoÃ»t', '3 AoÃ»t', '4 AoÃ»t', '5 AoÃ»t', '6 AoÃ»t', '7 AoÃ»t'],
         datasets: [{
-            label: 'Paiements (€)',
+            label: 'Paiements (â¬)',
             data: [500, 700, 800, 400, 600, 900, 1000],
             borderColor: 'green',
             fill: false
@@ -1107,7 +1114,7 @@ new Chart(document.getElementById('paiementsChart'), {
 new Chart(document.getElementById('connexionsChart'), {
     type: 'line',
     data: {
-        labels: ['1 Août', '2 Août', '3 Août', '4 Août', '5 Août', '6 Août', '7 Août'],
+        labels: ['1 AoÃ»t', '2 AoÃ»t', '3 AoÃ»t', '4 AoÃ»t', '5 AoÃ»t', '6 AoÃ»t', '7 AoÃ»t'],
         datasets: [{
             label: 'Taux de connexion (%)',
             data: [60, 70, 65, 80, 75, 85, 90],

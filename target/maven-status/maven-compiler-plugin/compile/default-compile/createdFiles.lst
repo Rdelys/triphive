@@ -1,0 +1,3 @@
+com\triphive\model\Pays.class
+com\triphive\servlet\PaysServlet.class
+com\triphive\dao\PaysDAO.class

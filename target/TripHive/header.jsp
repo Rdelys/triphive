@@ -95,7 +95,7 @@
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="registerModalLabel">Créer un compte</h5>
+        <h5 class="modal-title" id="registerModalLabel">Creation compte</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
@@ -109,7 +109,7 @@
           <div class="mb-3">
             <input type="password" class="form-control" placeholder="Mot de passe">
           </div>
-          <button type="submit" class="btn-modern w-100">S’enregistrer</button>
+          <button type="submit" class="btn-modern w-100">Enregistrer</button>
         </form>
       </div>
     </div>
